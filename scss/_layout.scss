@@ -1,0 +1,101 @@
+@import 'variables';
+@import 'mixins';
+
+.navbar {
+  background-color: $primary !important;
+  padding: 1rem 0;
+  @include transition-standard;
+
+  .navbar-brand {
+    font-family: $font-family-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: $light !important;
+  }
+
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        color: rgba($light, 0.8) !important;
+        font-weight: 500;
+        margin: 0 10px;
+        @include transition-standard;
+
+        &:hover, &.active {
+          color: $light !important;
+          transform: translateY(-2px);
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          width: 0;
+          height: 2px;
+          background: $accent;
+          @include transition-standard;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+#hero-title {
+  color: $bg-cream !important;
+}
+
+.footer {
+  background-color: $dark;
+  color: $light;
+  padding: 4rem 0 2rem;
+  margin-top: 5rem;
+
+  p, a, span, .text-muted {
+    color: $light !important;
+  }
+
+  .footer-title {
+    font-family: $font-family-serif;
+    color: $light;
+    margin-bottom: 2rem;
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: $primary;
+      margin-top: 10px;
+    }
+  }
+
+  .footer-links {
+    padding: 0;
+    li {
+      margin-bottom: 10px;
+      a {
+        color: $light;
+        @include transition-standard;
+        &:hover {
+          color: $accent;
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba($light, 0.1);
+    font-size: 0.9rem;
+    color: $light !important;
+    opacity: 1;
+  }
+}
